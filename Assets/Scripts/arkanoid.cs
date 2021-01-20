@@ -36,8 +36,7 @@ public class arkanoid : MonoBehaviour
             if (Input.touchCount >= 1)
             {
                 var newpos = cam.ScreenToWorldPoint(Input.GetTouch(0).position);
-                newpos *= Vector2.right;
-                palapos = newpos;
+                palapos = new Vector3(newpos.x, palapos.y,0);
                 pala.transform.position = palapos;
             }
         #endif
