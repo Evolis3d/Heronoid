@@ -200,6 +200,7 @@
           <e p="bola.cs" t="Include" />
           <e p="brick.cs" t="Include" />
           <e p="ForceAspectRatio.cs" t="Include" />
+          <e p="LevelController.cs" t="Include" />
           <e p="Shake.cs" t="Include" />
         </e>
       </e>

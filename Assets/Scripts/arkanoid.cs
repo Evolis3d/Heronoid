@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class arkanoid : MonoBehaviour
 {
@@ -10,17 +11,22 @@ public class arkanoid : MonoBehaviour
     private Vector3 palapos;
     
     private Camera cam;
+
+    private LevelController levComp;
     
 
     // Start is called before the first frame update
     void Awake()
     {
-       cam = Camera.main; 
+       cam = Camera.main;
+       levComp = FindObjectOfType<LevelController>();
     }
 
     void Start()
     {
-        palapos = pala.transform.position;
+        levComp.InitLevel += StartPreAlgo;
+        levComp.LevelStarted += StartCurrentLevel;
+        levComp.LevelCleared += NextLevel;
     }
 
     // Update is called once per frame
@@ -41,5 +47,29 @@ public class arkanoid : MonoBehaviour
             }
         #endif
         
+    }
+
+    private void StartPreAlgo()
+    {
+        print("Nivel preparado!");
+    }
+
+    private void StartCurrentLevel()
+    {
+        print("Level Started!");
+        palapos = pala.transform.position;  
+    }
+
+    private void NextLevel()
+    {
+        //de momento, repetimos el mismo level...
+        SceneManager.LoadScene(0);
+    }
+
+    void OnDestroy()
+    {
+        levComp.InitLevel -= StartPreAlgo;
+        levComp.LevelStarted -= StartCurrentLevel;
+        levComp.LevelCleared -= NextLevel;
     }
 }
