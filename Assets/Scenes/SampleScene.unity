@@ -790,10 +790,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   referenceMode: 0
-  x: 54
-  y: 115
-  width: 1150
-  height: 540
+  x: 9
+  y: 16
+  width: 1920
+  height: 1080
   onAwake: 1
   onUpdate: 0
 --- !u!20 &519420031
