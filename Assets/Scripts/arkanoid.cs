@@ -9,6 +9,7 @@ public class arkanoid : MonoBehaviour
     public Transform pala;
     public float palaspeed;
     private Vector3 palapos;
+    private float Ypos;
     
     private Camera cam;
 
@@ -20,6 +21,7 @@ public class arkanoid : MonoBehaviour
     {
        cam = Camera.main;
        levComp = FindObjectOfType<LevelController>();
+       Ypos = pala.position.y;
     }
 
     void Start()
@@ -27,6 +29,7 @@ public class arkanoid : MonoBehaviour
         levComp.InitLevel += StartPreAlgo;
         levComp.LevelStarted += StartCurrentLevel;
         levComp.LevelCleared += NextLevel;
+        
     }
 
     // Update is called once per frame
@@ -42,7 +45,9 @@ public class arkanoid : MonoBehaviour
             if (Input.touchCount >= 1)
             {
                 var newpos = cam.ScreenToWorldPoint(Input.GetTouch(0).position);
-                palapos = new Vector3(newpos.x, palapos.y,0);
+                //palapos = new Vector3(newpos.x, palapos.y,0);
+                palapos = new Vector3(newpos.x,Ypos,0);
+
                 pala.transform.position = palapos;
             }
         #endif
