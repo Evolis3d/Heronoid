@@ -790,6 +790,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5130934631156625135, guid: 83879039af1df2b47b3d63a824f7b772,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5130934631156625135, guid: 83879039af1df2b47b3d63a824f7b772,
+        type: 3}
       propertyPath: m_TagString
       value: pala
       objectReference: {fileID: 0}
