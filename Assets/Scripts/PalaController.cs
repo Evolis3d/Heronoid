@@ -14,11 +14,20 @@ namespace mierdergames
         private bool canMove;
             
         private Personajitos _persoComp;
+
+        #if UNITY_ANDROID && !UNITY_EDITOR
+            private Camera _cam;
+        #endif
+       
         
         void Awake()
         {
             _persoComp = GetComponent<Personajitos>();
             Ypos = pala.position.y;
+            
+            #if UNITY_ANDROID && !UNITY_EDITOR
+                _cam = Camera.main;
+            #endif
         }
         
         void Start()
@@ -38,7 +47,7 @@ namespace mierdergames
             #if UNITY_ANDROID && !UNITY_EDITOR
                 if (Input.touchCount >= 1)
                 {
-                    var newpos = cam.ScreenToWorldPoint(Input.GetTouch(0).position);
+                    var newpos = _cam.ScreenToWorldPoint(Input.GetTouch(0).position);
                     //palapos = new Vector3(newpos.x, palapos.y,0);
                     palapos = new Vector3(newpos.x,Ypos,0);
 

@@ -201,6 +201,11 @@
           <e p="brick.cs" t="Include" />
           <e p="ForceAspectRatio.cs" t="Include" />
           <e p="LevelController.cs" t="Include" />
+          <e p="PalaController.cs" t="Include" />
+          <e p="Personajitos.cs" t="Include" />
+          <e p="ScriptableObjects" t="Include">
+            <e p="SO_Personajito.cs" t="Include" />
+          </e>
           <e p="Shake.cs" t="Include" />
         </e>
       </e>
