@@ -4,54 +4,33 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+using mierdergames;
+
+[RequireComponent(typeof(LevelController),typeof(PalaController))]
 public class arkanoid : MonoBehaviour
 {
-    public Transform pala;
-    public float palaspeed;
-    private Vector3 palapos;
-    private float Ypos;
-    
-    private Camera cam;
-
-    private LevelController levComp;
-    
+    private LevelController _levComp;
+    private PalaController _palaComp;
 
     // Start is called before the first frame update
     void Awake()
     {
-       cam = Camera.main;
-       levComp = FindObjectOfType<LevelController>();
-       Ypos = pala.position.y;
+        _levComp = GetComponent<LevelController>();
+        _palaComp = GetComponent<PalaController>();
     }
 
     void Start()
     {
-        levComp.InitLevel += StartPreAlgo;
-        levComp.LevelStarted += StartCurrentLevel;
-        levComp.LevelCleared += NextLevel;
+        //de momento lo hago todo aquí, a saco...
         
+        _levComp.InitLevel += StartPreAlgo;
+        _levComp.LevelStarted += StartCurrentLevel;
+        _levComp.LevelCleared += NextLevel;
     }
 
     // Update is called once per frame
     void Update()
     {
-        #if UNITY_EDITOR  
-            pala.transform.Translate(Input.GetAxis("Horizontal") * palaspeed * Time.deltaTime, 0, 0);
-            if (Input.GetKeyDown(KeyCode.Escape)) UnityEditor.EditorApplication.isPlaying = false;
-        #endif
-        
-        
-        #if UNITY_ANDROID && !UNITY_EDITOR
-            if (Input.touchCount >= 1)
-            {
-                var newpos = cam.ScreenToWorldPoint(Input.GetTouch(0).position);
-                //palapos = new Vector3(newpos.x, palapos.y,0);
-                palapos = new Vector3(newpos.x,Ypos,0);
-
-                pala.transform.position = palapos;
-            }
-        #endif
-        
     }
 
     private void StartPreAlgo()
@@ -62,7 +41,8 @@ public class arkanoid : MonoBehaviour
     private void StartCurrentLevel()
     {
         print("Level Started!");
-        palapos = pala.transform.position;  
+        _palaComp.InitPala();
+        _palaComp.EnableControl();
     }
 
     private void NextLevel()
@@ -73,8 +53,8 @@ public class arkanoid : MonoBehaviour
 
     void OnDestroy()
     {
-        levComp.InitLevel -= StartPreAlgo;
-        levComp.LevelStarted -= StartCurrentLevel;
-        levComp.LevelCleared -= NextLevel;
+        _levComp.InitLevel -= StartPreAlgo;
+        _levComp.LevelStarted -= StartCurrentLevel;
+        _levComp.LevelCleared -= NextLevel;
     }
 }

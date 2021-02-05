@@ -499,9 +499,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 231462995}
+  - component: {fileID: 231462999}
   - component: {fileID: 231462994}
   - component: {fileID: 231462997}
   - component: {fileID: 231462996}
+  - component: {fileID: 231462998}
   m_Layer: 0
   m_Name: GAME
   m_TagString: Untagged
@@ -521,8 +523,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf741ddd93d47949867723f75764ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pala: {fileID: 450506827}
-  palaspeed: 5
 --- !u!4 &231462995
 Transform:
   m_ObjectHideFlags: 0
@@ -565,6 +565,39 @@ MonoBehaviour:
   bricks: []
   bolaPrefab: {fileID: 189545540276290739, guid: d4177c163f7f5ba42b3e0b1b2a13cc6e,
     type: 3}
+--- !u!114 &231462998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231462993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e8820e497e67bf4cbd7bc9ede8f2f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pala: {fileID: 450506827}
+  palaspeed: 3
+  currentCombo: []
+--- !u!114 &231462999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231462993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11548c13128a9a34d85e6e6d1af9786e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lista:
+  - {fileID: 11400000, guid: 50790fd1e5352ea45883e8d32db5cbe3, type: 2}
+  - {fileID: 11400000, guid: 411f1cc63e71dbc439de9d3941d7ed30, type: 2}
+  - {fileID: 11400000, guid: 60b3a223201c6de4fbe92b217b39b3f9, type: 2}
+  desbloqueados: []
+  bloqueados: []
 --- !u!1 &416146347
 GameObject:
   m_ObjectHideFlags: 0
