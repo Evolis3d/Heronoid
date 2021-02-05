@@ -7,6 +7,7 @@ TagManager:
   - muros
   - bricks
   - death
+  - pala
   layers:
   - Default
   - TransparentFX
