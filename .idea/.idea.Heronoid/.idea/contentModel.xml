@@ -199,6 +199,7 @@
           <e p="arkanoid.cs" t="Include" />
           <e p="bola.cs" t="Include" />
           <e p="brick.cs" t="Include" />
+          <e p="FeedbackEffects.cs" t="Include" />
           <e p="ForceAspectRatio.cs" t="Include" />
           <e p="LevelController.cs" t="Include" />
           <e p="PalaController.cs" t="Include" />
@@ -206,7 +207,6 @@
           <e p="ScriptableObjects" t="Include">
             <e p="SO_Personajito.cs" t="Include" />
           </e>
-          <e p="Shake.cs" t="Include" />
         </e>
       </e>
       <e p="Heronoid.sln" t="IncludeFlat" />

@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using mierdergames.libs;
+using mierdergames.FeedbackEffects;
 
 public class bola : MonoBehaviour
 {
@@ -19,7 +19,7 @@ public class bola : MonoBehaviour
     
         
     private Transform _camtransform;
-    private Shake _shakeComp;
+    private FeedbackEffects _shakeComp;
     
     //data de la bola
     [Header("Bola Data")]
@@ -38,7 +38,7 @@ public class bola : MonoBehaviour
     void Awake()
     {
         if (!_camtransform) _camtransform = Camera.main.transform;
-        _shakeComp = FindObjectOfType<Shake>();
+        _shakeComp = FindObjectOfType<FeedbackEffects>();
     }
 
     // Start is called before the first frame update
@@ -123,7 +123,7 @@ public class bola : MonoBehaviour
             FastBall();
             
             //prueba de shaking
-            StartCoroutine(_shakeComp.Shakeit(_camtransform,  new Vector2(0.1f,0.075f) ) );
+            StartCoroutine(_shakeComp.Shake3(_camtransform,  new Vector2(0.1f,0.075f) ) );
         }
     }
 
