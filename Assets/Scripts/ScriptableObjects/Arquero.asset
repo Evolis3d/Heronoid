@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoPala: 0
   prefabPj: {fileID: 0}
+  idInteraccion: 1

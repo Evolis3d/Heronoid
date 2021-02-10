@@ -9,7 +9,7 @@ public class LevelController : MonoBehaviour
     public delegate void NotifyInitLevel();
     public delegate void NotifyLevelStarted();
     public delegate void NotifyLevelCleared();
-    
+
     public event NotifyInitLevel InitLevel;
     public event NotifyLevelStarted LevelStarted;
     public event NotifyLevelCleared LevelCleared;
@@ -19,7 +19,7 @@ public class LevelController : MonoBehaviour
 
     [Header("la Bola")] public GameObject bolaPrefab;
     
-    // Start is called before the first frame update
+    
     void Start()
     {
         if (rootLevel == null) return;
@@ -35,6 +35,7 @@ public class LevelController : MonoBehaviour
         //por ejemplo, que empiece la partida despues de 2 secs, una vez se ha mostrado el cutscene, etc...
         StartCoroutine(StartCurrentLevelAfterSecs(2));
     }
+    
 
     //puede ser llamado desde el script del brick, el LevelManager, o el GameManager...
     //NOTA: CUANDO SOPORTEMOS BOSSES, HAY QUE MODIFICAR ESTA FUNCION
@@ -50,14 +51,23 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    IEnumerator StartCurrentLevelAfterSecs(int secs)
+    //coRutina para preparar y comenzar un nivel
+    private IEnumerator StartCurrentLevelAfterSecs(int secs)
     {
         yield return new WaitForSeconds(secs);
-        LevelStarted?.Invoke();
         
-        //instancio la bola en el nivel
+        //instancio la bola en el nivel y suscribo al evento de la Bola para esperar a que esté en el nivel
         var mainBola = Instantiate(bolaPrefab);
+        var bolaComp = mainBola.GetComponent<bola>();
+        
+        //en cuanto exista el gameobject de la bola en el nivel, la partida puede comenzar.
+        bolaComp.BolaCreated += AlertLevelStarted;
     }
 
-
+    
+    //Notifica que el nivel ha empezado
+    private void AlertLevelStarted()
+    {
+        LevelStarted?.Invoke();
+    }
 }

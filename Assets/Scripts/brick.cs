@@ -7,7 +7,7 @@ public class brick : MonoBehaviour
 
 {
     [Header("Datos del Brick")]
-    [SerializeField] public float life;
+    [SerializeField] public int life;
     [SerializeField] private int idBrick;
     public int IdBrick => idBrick;
 
@@ -26,11 +26,16 @@ public class brick : MonoBehaviour
         _levComp = FindObjectOfType<LevelController>();
     }
 
-    public void RestaVida()
+    
+    /// <summary>
+    /// Le quito vida (aka daño) al brick. Le paso cuanto daño hago
+    /// </summary>
+    /// <param name="dmg"></param>
+    public void RestaVida(int dmg = 1)
     {
         if (life > 1)
         {
-            life--;
+            life -= dmg;
         }
         else
         {

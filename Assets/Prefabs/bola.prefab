@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 189545540276290742}
   - component: {fileID: 189545540276290737}
   - component: {fileID: 189545540276290736}
-  - component: {fileID: 189545540276290740}
+  - component: {fileID: 4746387887285174193}
   m_Layer: 0
-  m_Name: bola
+  m_Name: bola3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &189545540276290740
+--- !u!114 &4746387887285174193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,13 +130,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 189545540276290739}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66f88471d44494e43b80aa170300a946, type: 3}
+  m_Script: {fileID: 11500000, guid: 39807482447057d4eb8fd198b4cb39ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _balldir: {x: 0, y: 0}
   ballSpeed: 0
   _defaultSpeed: 2
   _defaultIncrementSpeed: 0.1
+  currentEffect: {fileID: 0}
   _timerball: 0
   _limitperdida: 8
   _isPerdida: 0

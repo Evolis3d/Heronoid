@@ -7,7 +7,7 @@ using UnityEngine;
 namespace mierdergames
 {
     [Serializable]
-    public enum Palapos
+    public enum Palapos    //de momento es para uso decorativo...
     {
       Left = 0,
       Center = 1,
@@ -20,5 +20,6 @@ namespace mierdergames
     {
         [SerializeField] public Palapos tipoPala;
         [SerializeField] public GameObject prefabPj;
+        [SerializeField] public int idInteraccion;     //ID del efecto/skill que aplicará a la bola
     }
 }
