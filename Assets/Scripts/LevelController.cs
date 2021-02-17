@@ -18,9 +18,17 @@ public class LevelController : MonoBehaviour
     public List<Transform> bricks;
 
     [Header("la Bola")] public GameObject bolaPrefab;
-    
-    
+
+
     void Start()
+    {
+        //WIP, más adelante todo esto lo gestiona el LevelManager o el GameManager...
+        
+        Init();
+    }
+
+    //Prepara los bricks del Level actual...
+    void Init()
     {
         if (rootLevel == null) return;
         var amount = rootLevel.childCount;

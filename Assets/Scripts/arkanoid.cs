@@ -9,12 +9,14 @@ using mierdergames;
 [RequireComponent(typeof(LevelController),typeof(PalaController))]
 public class arkanoid : MonoBehaviour
 {
+    private LevelManager _levMan;
     private LevelController _levComp;
     private PalaController _palaComp;
 
     // Start is called before the first frame update
     void Awake()
     {
+        _levMan = GetComponent<LevelManager>();
         _levComp = GetComponent<LevelController>();
         _palaComp = GetComponent<PalaController>();
     }
@@ -26,11 +28,6 @@ public class arkanoid : MonoBehaviour
         _levComp.InitLevel += StartPreAlgo;
         _levComp.LevelStarted += StartCurrentLevel;
         _levComp.LevelCleared += NextLevel;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     private void StartPreAlgo()
@@ -47,6 +44,8 @@ public class arkanoid : MonoBehaviour
 
     private void NextLevel()
     {
+        //pedir cambio de escena o que el LevelManager haga algo...
+        
         //de momento, repetimos el mismo level...
         SceneManager.LoadScene(0);
     }

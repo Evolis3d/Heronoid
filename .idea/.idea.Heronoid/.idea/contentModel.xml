@@ -199,12 +199,20 @@
           <e p="arkanoid.cs" t="Include" />
           <e p="bola.cs" t="Include" />
           <e p="brick.cs" t="Include" />
+          <e p="Coleccionables.cs" t="Include" />
           <e p="FeedbackEffects.cs" t="Include" />
           <e p="ForceAspectRatio.cs" t="Include" />
+          <e p="IdEfectoPala.cs" t="Include" />
+          <e p="Level.cs" t="Include" />
           <e p="LevelController.cs" t="Include" />
+          <e p="LevelManager.cs" t="Include" />
           <e p="PalaController.cs" t="Include" />
           <e p="Personajitos.cs" t="Include" />
           <e p="ScriptableObjects" t="Include">
+            <e p="SO_BossLevel.cs" t="Include" />
+            <e p="SO_InteraccionBrick.cs" t="Include" />
+            <e p="SO_Level.cs" t="Include" />
+            <e p="SO_LevelPack.cs" t="Include" />
             <e p="SO_Personajito.cs" t="Include" />
           </e>
         </e>
