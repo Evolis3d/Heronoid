@@ -501,6 +501,7 @@ GameObject:
   - component: {fileID: 231462995}
   - component: {fileID: 231462999}
   - component: {fileID: 231462994}
+  - component: {fileID: 231463001}
   - component: {fileID: 231462997}
   - component: {fileID: 231462998}
   - component: {fileID: 231463000}
@@ -615,6 +616,24 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 44233fcc8e7424642b1fb1526fea0198, type: 2}
   - {fileID: 11400000, guid: d8b2e9f9cebdb4049a4b0f5637a4a940, type: 2}
   - {fileID: 11400000, guid: a9b44926c2782f44f8b53e30de74629c, type: 2}
+--- !u!114 &231463001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231462993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1163a8f1cd9ee1f4894051ebbaee1297, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentLevelPack: {fileID: 0}
+  _niveles: []
+  CurrentLevel:
+    levelname: NewLevel_17/02/2021 0:00:00
+    _leveldata: 
+  levelIndex: 0
 --- !u!1 &416146347
 GameObject:
   m_ObjectHideFlags: 0
